@@ -5,7 +5,7 @@ export const generateSchema = (fields) => {
     if (field.type === "nested") {
       schema[field.key] = generateSchema(field.children);
     } else {
-      schema[field.key] = field.type === "string" ? "" : 0;
+      schema[field.key] = field.type;
     }
   });
   return schema;
